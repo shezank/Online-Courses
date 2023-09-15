@@ -1,25 +1,37 @@
 
 import PropTypes from 'prop-types';
+import Cart from '../Cart/Cart';
+import { toast } from 'react-toastify';
 
-const Carts = cart => {
+const Carts = ({ carts, hours, prices}) => {
+    const remaing = 20 - hours;
+    const defualtReaming = 0;
     return (
         <div className='w-1/4 bg-white p-4 space-y-3 rounded-xl'>
-            <h1 className='text-blue-500 text-xl font-bold'>Credit Hour Remaining 7 hr</h1>
+            <h1 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining {remaing > 0? remaing: toast.warning("Credit Hour Remaining") && defualtReaming } hr</h1>
             <hr />
-            <h2 className='text-2xl font-bold'>Course Name</h2>
+            <div>
+                <h2 className='text-2xl font-bold'>Course Name</h2>
+                <div>
+                    {
+                        carts.map((cart, idx) => <Cart key={idx} id={idx} cart={cart}></Cart>)
+                    }
+                </div>
+            </div>
             <hr />
-            <p className='text-gray-400 font-medium'>Total Credit Hour : 13</p>
-            <hr />
-            <h3 className=' text-gray-500 font-semibold text-xl'>Total Price : 48000 USD</h3>
 
-
+            <p className='text-gray-400 font-medium'>Total Credit Hour : {hours}</p>
+            <hr />
+            <h3 className=' text-gray-500 font-semibold text-xl'>Total Price : {prices} USD</h3>
         </div>
     );
 };
 
 Carts.propTypes = {
-    cart: PropTypes.array,
-    
+    carts: PropTypes.array.isRequired,
+    prices: PropTypes.number,
+    hours: PropTypes.number.isRequired
+
 };
 
 export default Carts;

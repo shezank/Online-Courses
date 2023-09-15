@@ -1,18 +1,48 @@
+import { useState } from 'react'
 import './App.css'
 import Carts from './Components/Carts/Carts'
 import Courses from './Components/Courses/Courses'
 import Headers from './Components/Headers/Headers'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  const [carts, setCarts] = useState([]);
+  const [hours, setHours] = useState(0);
+  const [prices, setPrices] = useState(0);
+  // const [remaing, setReming] = useState(20);
+
+  const handlerCartClick = (cart, id) => {
+
+    const isExist = carts.find(item => item.id === id);
+   
+    if(isExist){
+     return toast.warning('Already Added')
+    }
+    else{
+      const newCarts = [...carts, cart];
+      setCarts(newCarts);
+      toast.success('Add Successfull')
+    }
+
+    const newHours = hours + cart.hours;
+    setHours(newHours);
+    
+    const newPrice = (prices + cart.price).toFixed(2);
+    const pricesNumbers = parseFloat(newPrice)
+    setPrices(pricesNumbers);
+
+
+  }
 
 
   return (
     <>
       <Headers></Headers>
-
       <div className='flex gap-10 mx-20'>
-        <Courses></Courses>
-        <Carts></Carts>
+        <Courses handlerCartClick={handlerCartClick}></Courses>
+        <Carts carts={carts} hours={hours} prices={prices} ></Carts>
+        <ToastContainer></ToastContainer>
       </div>
     </>
   )
