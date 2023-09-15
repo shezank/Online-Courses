@@ -12,7 +12,7 @@ const Courses = ({handlerCartClick}) => {
         .then(data => setCourses(data))
     },[])
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-3/4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-3/4'>
             {
                 courses.map(course => <Course handlerCartClick={handlerCartClick} key={course.id} course={course} ></Course>)
             }

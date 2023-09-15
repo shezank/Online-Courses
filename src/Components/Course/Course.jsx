@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types';
 
-const Course = ({course, handlerCartClick, toast}) => {
+const Course = ({course, handlerCartClick}) => {
     const {id, img, course_name, price, hours,course_details} = course;
     
     return (
@@ -15,7 +15,7 @@ const Course = ({course, handlerCartClick, toast}) => {
                 <span>Price: ${price}</span> <span>Credit : {hours}hr</span>
             </div>
             <div className='text-center mt-4'>
-            <button onClick={()=>handlerCartClick(course, id)} className='bg-blue-500 text-white font-semibold px-20 py-4 rounded-xl text-xl'>Click</button>
+            <button onClick={()=>handlerCartClick(course, id)} className='bg-blue-500 text-white font-semibold px-20 py-4 rounded-xl text-xl w-full'>Click</button>
             </div>
         </div>
     );

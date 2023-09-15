@@ -45,11 +45,11 @@ function App() {
   return (
     <>
       <Headers></Headers>
-      <div className='flex gap-10 mx-20'>
+      <div className='lg:flex lg:gap-10 lg:mx-14 mx-5'>
         <Courses handlerCartClick={handlerCartClick}></Courses>
         <Carts carts={carts} hours={hours} prices={prices} ></Carts>
         <ToastContainer
-        position="top-left"
+        position="bottom-right"
         autoClose={2000}
         
         ></ToastContainer>
