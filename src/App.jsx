@@ -25,8 +25,14 @@ function App() {
       toast.success('Add Successfull')
     }
 
-    const newHours = hours + cart.hours;
-    setHours(newHours);
+    if(hours>= 20){
+     return toast.warning('Total Cradit Hours Over');
+    }
+    else{
+      const newHours = hours + cart.hours;
+      setHours(newHours);
+    }
+
     
     const newPrice = (prices + cart.price).toFixed(2);
     const pricesNumbers = parseFloat(newPrice)
@@ -42,7 +48,11 @@ function App() {
       <div className='flex gap-10 mx-20'>
         <Courses handlerCartClick={handlerCartClick}></Courses>
         <Carts carts={carts} hours={hours} prices={prices} ></Carts>
-        <ToastContainer></ToastContainer>
+        <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        
+        ></ToastContainer>
       </div>
     </>
   )

@@ -7,8 +7,8 @@ const Carts = ({ carts, hours, prices}) => {
     const remaing = 20 - hours;
     const defualtReaming = 0;
     return (
-        <div className='w-1/4 bg-white p-4 space-y-3 rounded-xl'>
-            <h1 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining {remaing > 0? remaing: toast.warning("Credit Hour Remaining") && defualtReaming } hr</h1>
+        <div className='w-1/4 bg-white p-4 space-y-3 rounded-xl h-min'>
+            <h1 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining {remaing > 0? remaing: toast.warning("Credit Hour Remaining 0") && defualtReaming } hr</h1>
             <hr />
             <div>
                 <h2 className='text-2xl font-bold'>Course Name</h2>
