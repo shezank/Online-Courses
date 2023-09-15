@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/WW2WsVX/Rectangle-2.png",
+      "course_name": "Introduction Python",
+      "price": 49.99,
+      "hours": 20,
+      "course_details": "Learn the basics of HTML, CSS, and JavaScript to kickstart your web development journey."
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/30TXF5W/Rectangle-2-1.png",
+      "course_name": "Introduction Data-Base",
+      "price": 79.99,
+      "hours": 30,
+      "course_details": "Master the art of creating web layouts that adapt seamlessly to different screen sizes."
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/y8q8wtT/Rectangle-2-2.png",
+      "course_name": "Introduction C Pograming",
+      "price": 69.99,
+      "hours": 25,
+      "course_details": "Dive deep into JavaScript and create interactive web applications with confidence."
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/brGW8N6/Rectangle-2-3.png",
+      "course_name": "Introduction Algorithm",
+      "price": 89.99,
+      "hours": 40,
+      "course_details": "Build server-side web applications using Node.js and the Express.js framework."
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/BrMjNkr/Rectangle-2-4.png",
+      "course_name": "Introduction C++ Language",
+      "price": 59.99,
+      "hours": 30,
+      "course_details": "Learn how to design and manage databases for web applications efficiently."
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/wSKwCky/Rectangle-2-5.png",
+      "course_name": "Introduction Enginiaring",
+      "price": 79.99,
+      "hours": 35,
+      "course_details": "Become proficient in building dynamic web interfaces with React.js."
+    },
+    {
+      "id": 7,
+      "img": "https://i.ibb.co/D7shX5x/Rectangle-2-6.png",
+      "course_name": "Angular 9 Mastery",
+      "price": 99.99,
+      "hours": 45,
+      "course_details": "Master the Angular framework and build robust web applications."
+    },
+    {
+      "id": 8,
+      "img": "https://i.ibb.co/3pSZxLW/Rectangle-3.png",
+      "course_name": "Introduction To Data Structure",
+      "price": 199.99,
+      "hours": 100,
+      "course_details": "Comprehensive training to become a full-stack web developer."
+    },
+    {
+      "id": 9,
+      "img": "https://i.ibb.co/0CsqyPD/Rectangle-3-1.png",
+      "course_name": "AWS, Cloud Computing ",
+      "price": 69.99,
+      "hours": 30,
+      "course_details": "Learn about web security practices and implement secure user authentication."
+    }
+  ]
+  
