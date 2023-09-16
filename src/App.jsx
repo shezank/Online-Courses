@@ -10,34 +10,30 @@ function App() {
   const [carts, setCarts] = useState([]);
   const [hours, setHours] = useState(0);
   const [prices, setPrices] = useState(0);
-  // const [remaing, setReming] = useState(20);
 
   const handlerCartClick = (cart, id) => {
 
-    const isExist = carts.find(item => item.id === id);
-   
-    if(isExist){
-     return toast.warning('Already Added')
+    const newHours = hours + cart.hours;
+    if (newHours > 20) {
+      return toast.error('Not Enough Remiaining Hours');
     }
-    else{
-      const newCarts = [...carts, cart];
-      setCarts(newCarts);
-      toast.success('Add Successfull')
-    }
-
-    if(hours>= 20){
-     return toast.warning('Total Cradit Hours Over');
-    }
-    else{
-      const newHours = hours + cart.hours;
+    else {
       setHours(newHours);
     }
 
-    
+    const isExist = carts.find(item => item.id === id);
+    if (isExist) {
+      return toast.warning('Already Added')
+    }
+    else {
+      const newCarts = [...carts, cart];
+      setCarts(newCarts);
+      toast.success('Successfully Add Your Course')
+    }
+
     const newPrice = (prices + cart.price).toFixed(2);
     const pricesNumbers = parseFloat(newPrice)
     setPrices(pricesNumbers);
-
 
   }
 
@@ -49,9 +45,9 @@ function App() {
         <Courses handlerCartClick={handlerCartClick}></Courses>
         <Carts carts={carts} hours={hours} prices={prices} ></Carts>
         <ToastContainer
-        position="bottom-right"
-        autoClose={2000}
-        
+          position="bottom-right"
+          autoClose={2000}
+
         ></ToastContainer>
       </div>
     </>

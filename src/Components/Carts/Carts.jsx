@@ -4,11 +4,12 @@ import Cart from '../Cart/Cart';
 import { toast } from 'react-toastify';
 
 const Carts = ({ carts, hours, prices}) => {
+
     const remaing = 20 - hours;
-    const defualtReaming = 0;
+    const defualtReaming = 0; 
     return (
         <div className='lg:w-1/4 bg-white p-4 space-y-3 rounded-xl h-min lg:m-0 my-10'>
-            <h1 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining {remaing > 0? remaing: toast.warning("Credit Hour Remaining 0") && defualtReaming } hr</h1>
+            <h1 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining {remaing > 0? remaing :  toast.warning("Credit Hour Remaining 0") && defualtReaming    } hr</h1>
             <hr />
             <div>
                 <h2 className='text-2xl font-bold'>Course Name</h2>
