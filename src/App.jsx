@@ -11,23 +11,20 @@ function App() {
   const [hours, setHours] = useState(0);
   const [prices, setPrices] = useState(0);
 
-  const handlerCartClick = (cart, id) => {
+  const handlerCartClick = (cart) => {
 
     const newHours = hours + cart.hours;
-    if (newHours > 20) {
-      return toast.error('Not Enough Remiaining Hours');
-    }
-    else {
-      setHours(newHours);
-    }
-
-    const isExist = carts.find(item => item.id === id);
+    const isExist = carts.find(item => item.id === cart.id);
     if (isExist) {
       return toast.warning('Already Added')
+    }
+    else if (newHours > 20) {
+      return toast.error('Not Enough Remiaining Hours');
     }
     else {
       const newCarts = [...carts, cart];
       setCarts(newCarts);
+      setHours(newHours);
       toast.success('Successfully Add Your Course')
     }
 
